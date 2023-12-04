@@ -7,14 +7,21 @@ function createImage({
 }) {
   return `
   <li class="thumb">
-<img src=${regular} alt=${alt_description} class="img"/>
-<button type="button" class="img__btn"></button>
-<div class="avatar__wrap">
-<img src=${small} alt=${name} class="avatar" />
-<p class="description">${
-    alt_description[0].toUpperCase() + alt_description.slice(1)
-  }</p>
-</div>
+    <div class="img_wrap">
+      <img src=${regular} alt=${alt_description} class="img"/>
+      <button type="button" class="img__btn">
+      <svg class="icon" aria-label="Additional functions">
+        <use class="icon-dots" href="./images/icons.svg#dots"></use>
+      </svg>
+      </button>
+    </div>
+    <div class="avatar__wrap">
+      <img src=${small} alt=${name} class="avatar" />
+      <p class="description">${
+        alt_description[0].toUpperCase() + alt_description.slice(1)
+      }</p>
+    </div>
+  </li>  
 `;
 
   //   </li>

@@ -25,8 +25,18 @@
   </head>
   <body>
     <header class="header container">
+      <button type="button" class="img__btn">
+        <svg class="icon" aria-label="Additional functions">
+          <use class="icon-dots" href="./images/icons.svg#dots"></use>
+        </svg>
+      </button>
       <a class="btn" href="#">Pinterest</a>
-      <input class="filter" type="text" placeholder="Поиск" />
+      <div class="input__wrap">
+        <input class="filter" type="text" placeholder="Поиск" />
+        <svg class="icon__search" aria-label="Additional functions">
+          <use class="search" href="./images/icons.svg#search"></use>
+        </svg>
+      </div>
       <button type="button" class="btn">Выбрать доску</button>
     </header>
     <main>
@@ -34,6 +44,6 @@
         <ul class="list"></ul>
       </section>
     </main>
-    <script src="./js/index.js" type="module"></script>
+    <script src="./index.js" type="module"></script>
   </body>
 </html>

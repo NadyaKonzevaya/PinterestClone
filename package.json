@@ -7,7 +7,9 @@
   "dependencies": {
     "parcel": "^2.10.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "parcel-plugin-svg": "^0.1.0"
+  },
   "homepage": "https://NadyaKonzevaya.github.io/PinterestClone/",
   "scripts": {
     "dev": "parcel src/index.html",

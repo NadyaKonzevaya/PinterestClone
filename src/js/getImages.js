@@ -15,8 +15,7 @@ const runPinterestApplication = async () => {
     console.log(photos);
     localStorage.setItem("photos", JSON.stringify(photos));
   }
-  console.log(localStoragePhotos);
-  return localStoragePhotos ?? [];
+  return localStoragePhotos;
 };
 
 export default runPinterestApplication;

@@ -8,9 +8,10 @@
     "parcel": "^2.10.3"
   },
   "devDependencies": {},
+  "homepage": "https://NadyaKonzevaya.github.io/PinterestClone/",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/*.html --public-url /PinterestClone/"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/NadyaKonzevaya/PinterestClone/issues"
-  },
-  "homepage": "https://github.com/NadyaKonzevaya/PinterestClone#readme"
+  }
 }

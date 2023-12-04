@@ -1,0 +1,26 @@
+{
+  "name": "pinterest_clone",
+  "version": "1.0.0",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "parcel": "^2.10.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NadyaKonzevaya/PinterestClone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NadyaKonzevaya/PinterestClone/issues"
+  },
+  "homepage": "https://github.com/NadyaKonzevaya/PinterestClone#readme"
+}

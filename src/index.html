@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./images/favicon.png"
+      type="image/png"
+      style="color: #e60023"
+    />
+    <title>Pinterest clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Raleway:wght@400;700;900&family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <header class="header container">
+      <a class="btn" href="#">Pinterest</a>
+      <input class="filter" type="text" placeholder="Поиск" />
+      <button type="button" class="btn">Выбрать доску</button>
+    </header>
+    <main>
+      <section class="images container">
+        <ul class="list"></ul>
+      </section>
+    </main>
+    <script src="./js/index.js" type="module"></script>
+  </body>
+</html>

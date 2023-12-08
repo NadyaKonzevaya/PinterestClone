@@ -1,4 +1,7 @@
+import svg from "../images/icons.svg";
+
 function createImage({
+  id,
   alt_description,
   urls: { regular },
   user: {
@@ -9,11 +12,32 @@ function createImage({
   <li class="thumb">
     <div class="img_wrap">
       <img src=${regular} alt=${alt_description} class="img"/>
-      <button type="button" class="img__btn">
+      <div class="overlay"></div>
+      <button type="button" class="img__btn" data-action-menu>
       <svg class="icon" aria-label="Additional functions">
-        <use class="icon-dots" href="./images/icons.svg#dots"></use>
+        <use class="icon-dots" href="${svg}#dots"></use>
       </svg>
       </button>
+      <div class="img__menu modal is-hidden" id=${id}>
+        <ul class="menu__list">
+            <li class="menu__item">
+                <button type="button" class="menu__btn" data-action-add>Добавить на доску</button></li>
+            <li class="menu__item">
+                <button type="button" class="menu__btn" data-action-hide>Скрыть пин со страницы</button></li>
+            <li class="menu__item">
+                <button type="button" class="menu__btn" data-action-complain>Пожаловаться</button></li>
+            </ul>
+        <div class="img__menu modal__board is-hidden">
+            <ul class="menu__list">
+                <li class="menu__item">
+                <button type="button" class="menu__btn" id="board-1" data-action-board>Доска 1</button></li>
+                <li class="menu__item">
+                <button type="button" class="menu__btn" id="board-2" data-action-board>Доска 2</button></li>
+                <li class="menu__item">
+                <button type="button" class="menu__btn" id="board-3" data-action-board>Доска 3</button></li>
+            </ul>
+        </div>
+      </div>
     </div>
     <div class="avatar__wrap">
       <img src=${small} alt=${name} class="avatar" />
@@ -21,7 +45,9 @@ function createImage({
         alt_description[0].toUpperCase() + alt_description.slice(1)
       }</p>
     </div>
-  </li>  
+    
+  </li>
+  
 `;
 
   //   </li>

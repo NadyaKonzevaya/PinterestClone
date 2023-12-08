@@ -25,25 +25,104 @@
   </head>
   <body>
     <header class="header container">
-      <button type="button" class="img__btn">
-        <svg class="icon" aria-label="Additional functions">
-          <use class="icon-dots" href="./images/icons.svg#dots"></use>
-        </svg>
-      </button>
       <a class="btn" href="#">Pinterest</a>
       <div class="input__wrap">
         <input class="filter" type="text" placeholder="Поиск" />
-        <svg class="icon__search" aria-label="Additional functions">
+        <svg class="icon icon__search" aria-label="Additional functions">
           <use class="search" href="./images/icons.svg#search"></use>
         </svg>
       </div>
-      <button type="button" class="btn">Выбрать доску</button>
+      <button type="button" class="btn" data-action-choose>
+        Выбрать доску
+      </button>
     </header>
-    <main>
+    <main class="main">
       <section class="images container">
         <ul class="list"></ul>
       </section>
+      <div class="choose__board is-hidden">
+        <ul class="board__list">
+          <li class="board__item">
+            <button type="button" class="menu__btn" id="1">Доска 1</button>
+          </li>
+          <li class="board__item">
+            <button type="button" class="menu__btn" id="2">Доска 2</button>
+          </li>
+          <li class="board__item">
+            <button type="button" class="menu__btn" id="3">Доска 3</button>
+          </li>
+        </ul>
+      </div>
+      <div class="backdrop is-hidden">
+        <div class="modal__complain">
+          <p class="modal__complain__title">Жалоба на пин</p>
+
+          <label class="complain__item">
+            <input type="radio" name="complain" value="spam" />
+            Спам
+            <p class="complain__text">
+              Вводящие в заблуждение или повторяющиеся публикации
+            </p>
+          </label>
+          <label class="complain__item">
+            <input type="radio" name="complain" value="false information" />
+            Ложная информация
+            <p class="complain__text">
+              Ложная информация о здоровье, климате, голосованиях или теории
+              заговора
+            </p>
+          </label>
+          <label class="complain__item">
+            <input type="radio" name="complain" value="agressive actions" />
+            Агрессивные действия
+            <p class="complain__text">
+              Предрассудки, стереотипы, идея превосходства белой расы,
+              оскорбления
+            </p>
+          </label>
+          <label class="complain__item">
+            <input type="radio" name="complain" value="dangerous goods" />
+            Опасные товары
+            <p class="complain__text">Наркотики, оружие, регулируемые товары</p>
+          </label>
+          <label class="complain__item">
+            <input type="radio" name="complain" value="violance scenes" />
+            Сцены насилия
+            <p class="complain__text">
+              Графическое изображение или пропаганда насилия
+            </p>
+          </label>
+          <label class="complain__item">
+            <input type="radio" name="complain" value="pursuit or critisism" />
+            Преследование или критика
+            <p class="complain__text">
+              Оскорбления, угрозы, изображения обнаженного тела, опубликованные
+              без разрешения
+            </p></label
+          >
+
+          <label class="complain__item">
+            <input type="radio" name="complain" value="confidence violation" />
+            Нарушение конфиденциальности
+            <p class="complain__text">
+              Личные фотографии, персональная информация
+            </p>
+          </label>
+          <label class="complain__item">
+            <input type="radio" name="complain" value="intellectual property" />
+            Это моя интеллектуальная собственность
+            <p class="complain__text">
+              Нарушение авторских прав или прав на товарный знак
+            </p>
+          </label>
+          <div class="btn__wrap">
+            <button class="complain__btn" data-action-cancel>Отмена</button>
+            <button class="complain__btn">Далее</button>
+          </div>
+        </div>
+      </div>
     </main>
+
     <script src="./index.js" type="module"></script>
   </body>
 </html>

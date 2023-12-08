@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "description": "",
-  "main": "index.js",
+  "source": "src/index.html",
   "dependencies": {
     "parcel": "^2.10.3"
   },

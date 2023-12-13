@@ -9,7 +9,7 @@ function createImage({
   },
 }) {
   return `
-  <li class="thumb">
+  <li class="thumb" id=${id}>
     <div class="img_wrap">
       <img src=${regular} alt=${alt_description} class="img"/>
       <div class="overlay"></div>
@@ -18,26 +18,7 @@ function createImage({
         <use class="icon-dots" href="${svg}#dots"></use>
       </svg>
       </button>
-      <div class="img__menu modal is-hidden" id=${id}>
-        <ul class="menu__list">
-            <li class="menu__item">
-                <button type="button" class="menu__btn" data-action-add>Добавить на доску</button></li>
-            <li class="menu__item">
-                <button type="button" class="menu__btn" data-action-hide>Скрыть пин со страницы</button></li>
-            <li class="menu__item">
-                <button type="button" class="menu__btn" data-action-complain>Пожаловаться</button></li>
-            </ul>
-        <div class="img__menu modal__board is-hidden">
-            <ul class="menu__list">
-                <li class="menu__item">
-                <button type="button" class="menu__btn" id="board-1" data-action-board>Доска 1</button></li>
-                <li class="menu__item">
-                <button type="button" class="menu__btn" id="board-2" data-action-board>Доска 2</button></li>
-                <li class="menu__item">
-                <button type="button" class="menu__btn" id="board-3" data-action-board>Доска 3</button></li>
-            </ul>
-        </div>
-      </div>
+     <p class="saved is-hidden">SAVED</p>
     </div>
     <div class="avatar__wrap">
       <img src=${small} alt=${name} class="avatar" />
@@ -73,3 +54,23 @@ function createImage({
 }
 
 export default createImage;
+// <div class="img__menu modal is-hidden" id=${id}>
+//   <ul class="menu__list">
+//       <li class="menu__item">
+//           <button type="button" class="menu__btn" data-action-add>Добавить на доску</button></li>
+//       <li class="menu__item">
+//           <button type="button" class="menu__btn" data-action-hide>Скрыть пин со страницы</button></li>
+//       <li class="menu__item">
+//           <button type="button" class="menu__btn" data-action-complain>Пожаловаться</button></li>
+//       </ul>
+//   <div class="img__menu modal__board is-hidden">
+//       <ul class="menu__list">
+//           <li class="menu__item">
+//           <button type="button" class="menu__btn" id="board-1" data-action-board>Доска 1</button></li>
+//           <li class="menu__item">
+//           <button type="button" class="menu__btn" id="board-2" data-action-board>Доска 2</button></li>
+//           <li class="menu__item">
+//           <button type="button" class="menu__btn" id="board-3" data-action-board>Доска 3</button></li>
+//       </ul>
+//   </div>
+// </div>

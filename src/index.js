@@ -7,6 +7,7 @@ const headerRefs = {
   filter: document.querySelector(".filter"),
   chooseBtn: document.querySelector("[data-action-choose]"),
   boardContainer: document.querySelector(".choose__board"),
+  homeBtn: document.querySelector("[data-action-home]"),
 };
 
 // fetch images and save them to localStorage and create markup ---------------------------------------------------------------
@@ -14,10 +15,13 @@ runPinterestApplication();
 const images = JSON.parse(localStorage.getItem("photos")) || [];
 headerRefs.list.innerHTML = createList(images);
 // console.log(images);
+
 // headerRefs eventListeners -------------------------------------------------------------------------------------------
 headerRefs.filter.addEventListener("input", handleInputFilter);
 headerRefs.chooseBtn.addEventListener("click", toggleBoardChooseMenu);
-headerRefs.boardContainer.addEventListener("click", handleBoardedImages);
+headerRefs.boardContainer.addEventListener("click", switchToBoard);
+window.addEventListener("click", handleChooseMenuClose);
+headerRefs.homeBtn.addEventListener("click", handleReturnToHomePage);
 
 // filter --------------------------------------------------------------------------------------------------------------
 function handleInputFilter(event) {
@@ -35,11 +39,34 @@ function toggleBoardChooseMenu() {
 }
 
 // logging saved images -----------------------------------------------------------------------------------------------------
-function handleBoardedImages(e) {
+function switchToBoard(e) {
   const boardId = e.target.id;
-  // console.log(JSON.parse(localStorage.getItem(`board-${boardId}`)));
+  const imagesOnBoard = JSON.parse(localStorage.getItem(`board-${boardId}`));
+
+  headerRefs.list.innerHTML = imagesOnBoard
+    ? createList(imagesOnBoard)
+    : `<p class="no-pins">You have no saved pins here :(</p>`;
+
+  console.log(imagesOnBoard);
 }
 
+// close choosemenu by clicking aside --------------------------------------------
+
+function handleChooseMenuClose(e) {
+  if (
+    !e.target.matches(
+      "[data-action-choose], .choose__board, .board__list, .board__item, .choose-btn"
+    ) &&
+    !headerRefs.boardContainer.classList.contains("is-hidden")
+  ) {
+    headerRefs.boardContainer.classList.add("is-hidden");
+  }
+}
+
+// return to home page --------------------------------------------------------------------------------
+function handleReturnToHomePage() {
+  headerRefs.list.innerHTML = createList(images);
+}
 // imageRefs -----------------------------------------------------------------------------------------
 const imageRefs = {
   // menus: document.querySelectorAll(".img__menu"),

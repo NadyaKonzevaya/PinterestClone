@@ -5,10 +5,13 @@
   "description": "",
   "source": "src/index.html",
   "dependencies": {
+    "modern-normalize": "^2.0.0",
     "parcel": "^2.10.3"
   },
   "devDependencies": {
-    "parcel-plugin-svg": "^0.1.0"
+    "@parcel/transformer-sass": "^2.10.3",
+    "parcel-plugin-svg": "^0.1.0",
+    "sass": "^1.69.5"
   },
   "homepage": "https://NadyaKonzevaya.github.io/PinterestClone/",
   "scripts": {

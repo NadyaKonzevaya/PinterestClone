@@ -1,0 +1,35 @@
+.choose__board {
+    position: fixed;
+    z-index: 1;
+    top: 80px;
+    right: 20px;
+
+    width: 134px;
+    padding: 8px;
+
+    background-color: getColor("main");
+
+    box-shadow: 0 0 8px getColor("shadow");
+    @include radius(16px);
+}
+
+.board__list,
+.menu__list {
+    @extend %list;
+}
+
+.menu__btn {
+    width: 100%;
+    padding: 8px;
+
+    background-color: getColor("main");
+    @include radius(8px);
+
+    font-weight: 600;
+
+    @extend %pointer;
+
+    &:hover, &:focus {
+            background-color: getColor("background");
+        }
+}

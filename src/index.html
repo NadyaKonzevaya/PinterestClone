@@ -16,12 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Raleway:wght@400;700;900&family=Roboto:wght@500&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
-    />
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./sass/main.scss" />
   </head>
   <body>
     <header class="header container">
@@ -29,7 +24,7 @@
       <div class="input__wrap">
         <input class="filter" type="text" placeholder="Поиск" />
         <svg class="icon icon__search" aria-label="Additional functions">
-          <use class="search" href="./images/icons.svg#search"></use>
+          <use href="./images/icons.svg#search"></use>
         </svg>
       </div>
       <button type="button" class="btn" data-action-choose>
@@ -159,7 +154,6 @@
               без разрешения
             </p></label
           >
-
           <label class="complain__item">
             <input type="radio" name="complain" value="confidence violation" />
             Нарушение конфиденциальности

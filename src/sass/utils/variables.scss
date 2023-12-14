@@ -1,0 +1,10 @@
+$colors: (
+    "main": #FFFFFF,
+    "accent": #E60023,
+    "background":#E9E9E9,
+    "shadow": #0000001a,
+);
+
+@function getColor($key) {
+    @return map-get($colors, $key);
+}

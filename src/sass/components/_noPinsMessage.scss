@@ -1,0 +1,10 @@
+.no-pins {
+    margin: 0 auto;
+    padding: 15px;
+
+    background-color: getColor("accent");
+    @include radius();
+
+    @include font();
+    color: getColor("main");
+}

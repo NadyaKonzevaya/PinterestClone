@@ -1,0 +1,20 @@
+@mixin flex ($display, $j-c, $a-i) {
+    display: $display;
+    justify-content: $j-c;
+    align-items: $a-i;
+}
+
+@mixin font($f-s: 24px, $f-w: 500) {
+    font-size: $f-s;
+    font-weight: $f-w;
+}
+
+@mixin position($top, $left, $position: absolute) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+@mixin radius($boderRadius: 24px) {
+    border-radius: $boderRadius;
+}

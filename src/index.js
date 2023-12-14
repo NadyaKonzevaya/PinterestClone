@@ -10,12 +10,17 @@ const headerRefs = {
   homeBtn: document.querySelector("[data-action-home]"),
 };
 
-// fetch images and save them to localStorage and create markup ---------------------------------------------------------------
-runPinterestApplication();
-const images = JSON.parse(localStorage.getItem("photos")) || [];
-headerRefs.list.innerHTML = createList(images);
-// console.log(images);
+let images;
 
+// fetch images and save them to localStorage and create markup ---------------------------------------------------------------
+async function runApplication() {
+  await runPinterestApplication();
+  images = JSON.parse(localStorage.getItem("photos")) || [];
+  headerRefs.list.innerHTML = createList(images);
+}
+
+runApplication();
+console.log(images);
 // headerRefs eventListeners -------------------------------------------------------------------------------------------
 headerRefs.filter.addEventListener("input", handleInputFilter);
 headerRefs.chooseBtn.addEventListener("click", toggleBoardChooseMenu);
@@ -47,7 +52,7 @@ function switchToBoard(e) {
     ? createList(imagesOnBoard)
     : `<p class="no-pins">You have no saved pins here :(</p>`;
 
-  console.log(imagesOnBoard);
+  headerRefs.boardContainer.classList.add("is-hidden");
 }
 
 // close choosemenu by clicking aside --------------------------------------------
@@ -81,11 +86,11 @@ const imageRefs = {
   addToBoardBtn: document.querySelector("[data-action-add]"),
   hideBtn: document.querySelector("[data-action-hide]"),
   complainBtn: document.querySelector("[data-action-complain]"),
-  savedToasts: document.querySelectorAll(".saved"),
+  // savedToasts: document.querySelectorAll(".saved"),
 };
 // imageRefs.btnAdd.focus();
 
-// console.log(imageRefs.modal);
+// console.log(imageRefs.savedToasts);
 
 // headerRefs eventListeners -------------------------------------------------------------------------------------------
 headerRefs.list.addEventListener("click", handleImageMenu);
@@ -102,6 +107,7 @@ let imageContainerId;
 // console.log(imageContainerId);
 // open general image menu -----------------------------------------------------
 function handleImageMenu(e) {
+  console.log(images);
   if (!e.target.matches("[data-action-menu], .icon, .icon-dots")) {
     return;
   }
@@ -153,10 +159,10 @@ function handleAddToBoard(e) {
   if (!e.target.hasAttribute("data-action-board")) {
     return;
   }
-  console.log(imageContainerId);
+  // console.log(imageContainerId);
   const boardId = e.target.id;
-
-  const toastFiltered = [...imageRefs.savedToasts].filter(
+  const savedToasts = document.querySelectorAll(".saved");
+  const toastFiltered = [...savedToasts].filter(
     (toast) => toast.closest(".thumb").id === imageContainerId
   );
   [toastNeeded] = toastFiltered;

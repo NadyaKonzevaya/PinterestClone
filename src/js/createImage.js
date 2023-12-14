@@ -30,47 +30,6 @@ function createImage({
   </li>
   
 `;
-
-  //   </li>
-  //   <li class="todo ${isChecked ? "completed" : ""}" data-id=${id} >
-  //           <label class="text">
-  //             <input
-  //               type="checkbox"
-  //               name="tick"
-  //               value=${text}
-  //               class="checkbox"
-  //               ${isChecked ? "checked" : ""}
-  //             />
-  //             <span class="checkbox--customized">
-  //               <svg class="checkbox__icon">
-  //                 <use href="./icons.svg#icon-check"></use>
-  //               </svg>
-  //             </span>
-  //             ${text}</label
-  //           >
-  //           <button type="button" class="btn-close">x</button>
-  //           <span class="date">${date}</span>
-  //         </li>`;
 }
 
 export default createImage;
-// <div class="img__menu modal is-hidden" id=${id}>
-//   <ul class="menu__list">
-//       <li class="menu__item">
-//           <button type="button" class="menu__btn" data-action-add>Добавить на доску</button></li>
-//       <li class="menu__item">
-//           <button type="button" class="menu__btn" data-action-hide>Скрыть пин со страницы</button></li>
-//       <li class="menu__item">
-//           <button type="button" class="menu__btn" data-action-complain>Пожаловаться</button></li>
-//       </ul>
-//   <div class="img__menu modal__board is-hidden">
-//       <ul class="menu__list">
-//           <li class="menu__item">
-//           <button type="button" class="menu__btn" id="board-1" data-action-board>Доска 1</button></li>
-//           <li class="menu__item">
-//           <button type="button" class="menu__btn" id="board-2" data-action-board>Доска 2</button></li>
-//           <li class="menu__item">
-//           <button type="button" class="menu__btn" id="board-3" data-action-board>Доска 3</button></li>
-//       </ul>
-//   </div>
-// </div>

@@ -42,10 +42,10 @@ export function handleImageMenu(e) {
 
 // Toggle add-to-board menu -----------------------------------------------------
 export function toggleAddToBoardClick(e) {
-  const menu = e.target.closest(".img__menu");
-  const modalBoard = menu.querySelector(".modal__board");
+  // const menu = e.target.closest(".img__menu");
+  // const modalBoard = menu.querySelector(".modal__board");
 
-  modalBoard.classList.toggle("is-hidden");
+  imageRefs.modalBoard.classList.toggle("is-hidden");
 }
 
 // add to paticular board -----------------------------------------------------------
@@ -73,6 +73,7 @@ export function handleAddToBoard(e) {
   }, JSON.parse(localStorage.getItem(`${boardId}`)) || []);
 
   localStorage.setItem(`${boardId}`, JSON.stringify(imagesToSave));
+  imageRefs.modal.classList.add("is-hidden");
 }
 
 // hide image------------------------------------------------------------------------------------

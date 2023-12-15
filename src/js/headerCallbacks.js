@@ -23,6 +23,7 @@ export function switchToBoard(e) {
   const imagesOnBoard = JSON.parse(localStorage.getItem(`board-${boardId}`));
 
   if (imagesOnBoard) {
+    headerRefs.noPinsWrap.innerHTML = "";
     headerRefs.list.innerHTML = createList(imagesOnBoard);
     headerRefs.boardContainer.classList.add("is-hidden");
   } else {

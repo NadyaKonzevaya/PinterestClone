@@ -1,4 +1,5 @@
 .no-pins {
+    display: block;
     margin: 0 auto;
     padding: 15px;
 
@@ -7,4 +8,8 @@
 
     @include font();
     color: getColor("main");
+
+    @media screen and (min-width: 400px) {
+            width: 370px;
+        }
 }

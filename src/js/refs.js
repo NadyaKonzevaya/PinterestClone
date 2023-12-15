@@ -5,6 +5,7 @@ export const headerRefs = {
   chooseBtn: document.querySelector("[data-action-choose]"),
   boardContainer: document.querySelector(".choose__board"),
   homeBtn: document.querySelector("[data-action-home]"),
+  noPinsWrap: document.querySelector(".no-pins__wrap"),
 };
 
 // imageRefs -----------------------------------------------------------------------------------------

@@ -59,7 +59,7 @@ export function handleAddToBoard(e) {
   const toastFiltered = [...savedToasts].filter(
     (toast) => toast.closest(".thumb").id === imageContainerId
   );
-  [toastNeeded] = toastFiltered;
+  let [toastNeeded] = toastFiltered;
 
   toastNeeded.classList.remove("is-hidden");
   toastNeeded.textContent = `saved to ${boardId}`;

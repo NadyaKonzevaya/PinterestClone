@@ -8,6 +8,8 @@ import {
 } from "./helpers.js";
 
 let imageContainerId;
+const { modalBoard, modal, backdrop } = imageRefs;
+const { list } = headerRefs;
 
 // open general image menu -----------------------------------------------------
 export function handleImageMenu(e) {
@@ -15,37 +17,35 @@ export function handleImageMenu(e) {
     return;
   }
 
-  if (!imageRefs.modalBoard.classList.contains("is-hidden")) {
-    imageRefs.modalBoard.classList.add("is-hidden");
+  if (!modalBoard.classList.contains("is-hidden")) {
+    modalBoard.classList.add("is-hidden");
   }
   imageContainerId = e.target.closest(".thumb").id;
 
   const image = e.target.closest(".img_wrap");
 
   const rect = image.getBoundingClientRect();
-  imageRefs.modal.style.top = rect.bottom + "px";
-  imageRefs.modal.style.left = rect.left + "px";
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  modal.style.top = rect.bottom + scrollTop + "px";
+  modal.style.left = rect.left + "px";
 
   if (image.classList.contains("lastOpen")) {
-    imageRefs.modal.classList.add("is-hidden");
+    modal.classList.add("is-hidden");
     image.classList.remove("lastOpen");
   } else {
     const lastOpenImage = document.querySelector(".lastOpen");
     if (lastOpenImage) {
       lastOpenImage.classList.remove("lastOpen");
-      imageRefs.modal.classList.add("is-hidden");
+      modal.classList.add("is-hidden");
     }
-    imageRefs.modal.classList.remove("is-hidden");
+    modal.classList.remove("is-hidden");
     image.classList.add("lastOpen");
   }
 }
 
 // Toggle add-to-board menu -----------------------------------------------------
 export function toggleAddToBoardClick(e) {
-  // const menu = e.target.closest(".img__menu");
-  // const modalBoard = menu.querySelector(".modal__board");
-
-  imageRefs.modalBoard.classList.toggle("is-hidden");
+  modalBoard.classList.toggle("is-hidden");
 }
 
 // add to paticular board -----------------------------------------------------------
@@ -73,7 +73,7 @@ export function handleAddToBoard(e) {
   }, JSON.parse(localStorage.getItem(`${boardId}`)) || []);
 
   localStorage.setItem(`${boardId}`, JSON.stringify(imagesToSave));
-  imageRefs.modal.classList.add("is-hidden");
+  modal.classList.add("is-hidden");
 }
 
 // hide image------------------------------------------------------------------------------------
@@ -83,14 +83,14 @@ export function handleImageHide(e) {
   updateImages(filteredImages);
   saveImagesToLocalStorage(filteredImages);
 
-  headerRefs.list.innerHTML = createList(filteredImages);
-  imageRefs.modal.classList.add("is-hidden");
+  list.innerHTML = createList(filteredImages);
+  modal.classList.add("is-hidden");
 }
 
 // open complain modal -----------------------------------------------------------
 export function handleComplain(e) {
-  imageRefs.backdrop.classList.remove("is-hidden");
-  imageRefs.modal.classList.add("is-hidden");
+  backdrop.classList.remove("is-hidden");
+  modal.classList.add("is-hidden");
 }
 
 // close image menu by clicking aside ----------------------------------------------------------
@@ -100,7 +100,7 @@ export function handleMenuClose(e) {
       "[data-action-menu], .icon, .icon-dots, .img__menu, .menu__btn, .menu__item, .menu__list"
     )
   ) {
-    imageRefs.modal.classList.add("is-hidden");
+    modal.classList.add("is-hidden");
   }
 }
 
@@ -109,12 +109,12 @@ export function handleBackdropClick(e) {
   if (e.currentTarget !== e.target) {
     return;
   }
-  imageRefs.backdrop.classList.add("is-hidden");
+  backdrop.classList.add("is-hidden");
   inputsUncheck();
 }
 
 // handle cancel-button on complain modal ---------------------------------------------------------------
 export function handleCancelBtn() {
-  imageRefs.backdrop.classList.add("is-hidden");
+  backdrop.classList.add("is-hidden");
   inputsUncheck();
 }

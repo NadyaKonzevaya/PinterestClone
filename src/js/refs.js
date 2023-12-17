@@ -22,4 +22,3 @@ export const imageRefs = {
   hideBtn: document.querySelector("[data-action-hide]"),
   complainBtn: document.querySelector("[data-action-complain]"),
 };
-// imageRefs.btnAdd.focus();

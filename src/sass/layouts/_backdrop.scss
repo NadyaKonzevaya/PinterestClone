@@ -38,10 +38,6 @@ margin-top: 30px;
 .complain__item {
     display: block;
 margin-bottom: 10px;
-   
-           
-            // margin-bottom: 20px;
-       
 }
 
 .complain__text {
@@ -49,7 +45,6 @@ margin-bottom: 10px;
     margin-left: 18px;
 
     @include font(8px, 400);
-    // @include font(12px, 400);
 }
 
 .btn__wrap {

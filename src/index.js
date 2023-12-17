@@ -17,6 +17,7 @@ import {
   handleMenuClose,
   handleBackdropClick,
   handleCancelBtn,
+  // handleLoadMore,
 } from "./js/imagesCallbacks.js";
 
 // making global images ------------------------------------------------------------------------------------------------------
@@ -37,9 +38,9 @@ headerRefs.chooseBtn.addEventListener("click", toggleBoardChooseMenu);
 headerRefs.boardContainer.addEventListener("click", switchToBoard);
 window.addEventListener("click", handleChooseMenuClose);
 headerRefs.homeBtn.addEventListener("click", handleReturnToHomePage);
-
-// headerRefs eventListeners -------------------------------------------------------------------------------------------
 headerRefs.list.addEventListener("click", handleImageMenu);
+
+// imageRefs eventListeners -------------------------------------------------------------------------------------------
 imageRefs.addToBoardBtn.addEventListener("click", toggleAddToBoardClick);
 imageRefs.modalBoard.addEventListener("click", handleAddToBoard);
 imageRefs.hideBtn.addEventListener("click", handleImageHide);

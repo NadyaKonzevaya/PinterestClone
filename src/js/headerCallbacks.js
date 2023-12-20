@@ -3,14 +3,31 @@ import { images } from "../index.js";
 import createList from "./createList.js";
 
 const { list, boardContainer, filter, noPinsWrap } = headerRefs;
-
+// console.log(boardId);
 // filter --------------------------------------------------------------------------------------------------------------
 export function handleInputFilter(event) {
   const { currentTarget } = event;
-  const filterValue = currentTarget.value.toLowerCase();
-  const filteredImages = images.filter(({ alt_description }) =>
-    alt_description.toLowerCase().includes(filterValue)
+  const filterValue = currentTarget.value.toLowerCase().trim();
+
+  // const filteredImages = images.filter(({ alt_description }) =>
+  //   alt_description.toLowerCase().includes(filterValue)
+  // );
+  const activeBoard = JSON.parse(localStorage.getItem("activeBoard"));
+  const imagesOnBoard = JSON.parse(
+    localStorage.getItem(`board-${activeBoard}`)
   );
+  console.log(imagesOnBoard);
+  const filteredImages = activeBoard
+    ? imagesOnBoard.filter(({ alt_description }) =>
+        alt_description.toLowerCase().includes(filterValue)
+      )
+    : images.filter(({ alt_description }) =>
+        alt_description.toLowerCase().includes(filterValue)
+      );
+
+  // console.log(boardId);
+  // console.log(imagesOnBoard);
+  // const descriptions = document.querySelectorAll(".description");
   list.innerHTML = createList(filteredImages);
 }
 
@@ -23,6 +40,7 @@ export function toggleBoardChooseMenu() {
 // logging saved images -----------------------------------------------------------------------------------------------------
 export function switchToBoard(e) {
   const boardId = e.target.id;
+  localStorage.setItem("activeBoard", boardId);
   const imagesOnBoard = JSON.parse(localStorage.getItem(`board-${boardId}`));
 
   if (imagesOnBoard) {
@@ -53,4 +71,5 @@ export function handleReturnToHomePage() {
   list.innerHTML = createList(images);
   filter.value = "";
   noPinsWrap.innerHTML = "";
+  localStorage.removeItem("activeBoard");
 }

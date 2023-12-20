@@ -8,6 +8,7 @@ import {
 } from "./helpers.js";
 
 let imageContainerId;
+// export let boardId;
 const { modalBoard, modal, backdrop } = imageRefs;
 const { list } = headerRefs;
 
@@ -55,6 +56,7 @@ export function handleAddToBoard(e) {
   }
 
   const boardId = e.target.id;
+
   const savedToasts = document.querySelectorAll(".saved");
   const toastFiltered = [...savedToasts].filter(
     (toast) => toast.closest(".thumb").id === imageContainerId
